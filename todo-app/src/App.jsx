@@ -3,7 +3,10 @@ import "./App.css";
 
 function App() {
   const [task, setTask] = useState("");
-  const [todos, setTodos] = useState([]);
+  const [todos, setTodos] = useState([
+  { id: 1, text: "Sample Task 1", completed: false },
+  { id: 2, text: "Sample Task 2", completed: true }
+]);
 
   const addTask = () => {
     if (task.trim() === "") return;
@@ -35,6 +38,9 @@ function App() {
       <h1>My To-Do List</h1>
 
       <div className="input-section">
+        <button onClick={() => setTodos(todos.filter(todo => !todo.completed))}>
+  Clear Completed
+</button>
         <input
           type="text"
           placeholder="Enter a task..."
@@ -54,7 +60,11 @@ function App() {
           </li>
         ))}
       </ul>
+        <footer>
+      Tasks left: {todos.filter(t => !t.completed).length}
+    </footer>
     </div>
+    
   );
 }
 
