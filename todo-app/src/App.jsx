@@ -53,6 +53,11 @@ function App() {
       <ul>
         {todos.map((todo) => (
           <li key={todo.id} className={todo.completed ? "completed" : ""}>
+           <input
+        type="checkbox"
+        checked={todo.completed}
+        onChange={() => toggleComplete(todo.id)}
+      />
             <span onClick={() => toggleComplete(todo.id)}>
               {todo.text}
             </span>
