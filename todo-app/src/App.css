@@ -14,6 +14,10 @@ body {
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
+h1 {
+  text-align: center;
+}
+
 .input-section {
   display: flex;
   gap: 10px;
@@ -31,6 +35,10 @@ button {
   background: #007bff;
   color: white;
   border-radius: 5px;
+}
+
+button:hover {
+  opacity: 0.9;
 }
 
 ul {

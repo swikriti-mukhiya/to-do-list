@@ -8,10 +8,13 @@ function App() {
   const addTask = () => {
     if (task.trim() === "") return;
 
-    setTodos([
-      ...todos,
-      { id: Date.now(), text: task, completed: false },
-    ]);
+    const newTodo = {
+      id: Date.now(),
+      text: task,
+      completed: false,
+    };
+
+    setTodos([...todos, newTodo]);
     setTask("");
   };
 
@@ -29,7 +32,7 @@ function App() {
 
   return (
     <div className="container">
-      <h1>My To-Do List 📝</h1>
+      <h1>My To-Do List</h1>
 
       <div className="input-section">
         <input
